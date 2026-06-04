@@ -6,50 +6,27 @@ namespace SmartHome
     {
         static void Main()
         {
-            List<Appliance> devices = new List<Appliance>();
+            SmartHomeController controller = new SmartHomeController();            
+            controller.AddDevice(new Washer("LG", "Loundry room", 7));
+            controller.AddDevice(new Refrigerator("Samsung", "Kitchen", 3.4m));
+            controller.AddDevice(new Oven("Electrolux", "Kitchen", 200));
+            controller.AddDevice(new RobotVacuum("Xiaomi", "Living room", 100));
+            controller.AddDevice(new CoffeeMachine("Bosch", "Kitchen", 8));
 
-            // Skapa minst fyra objekt: 
-            // Washer, Refrigerator, Oven och RobotVacuum. 
-            // Lägg till dem i listan devices. 
-            Washer washer = new Washer("LG", "Loundry room", 7);
-            devices.Add(washer);
-            Refrigerator refrigerator = new Refrigerator("Samsung", "Kitchen", 3.4m);
-            devices.Add(refrigerator);
-            Oven oven = new Oven("Electrolux", "Kitchen", 200);
-            devices.Add(oven);
-            RobotVacuum robotVacuum = new RobotVacuum("Xiaomi", "Living room", 100);
-            devices.Add(robotVacuum);
-            CoffeeMachine coffeeMachine = new CoffeeMachine("Bosch", "Kitchen", 8);
-            devices.Add(coffeeMachine);
-
-            RunMorningRoutine(devices);
+            controller.PrintStatusReport();
 
             Console.WriteLine();
 
-            ReportAllEnergy(devices);
-        }
+            controller.TurnOnAll();
 
-        static void RunMorningRoutine(List<Appliance> devices)
-        {
-            foreach (Appliance device in devices)
-            {
-                Console.WriteLine(device.GetInfo());
-                device.TurnOn();
-                device.TurnOff();
-                Console.WriteLine();
-                
-            }
-        }
+            Console.WriteLine();
 
-        static void ReportAllEnergy(List<Appliance> devices)
-        {
-            foreach (Appliance device in devices)
-            {
-                double totalEnergy = device.GetDailyEnergyUsage();
+            double totalEnergy = controller.GetTotalDailyEnergyUsage();
+            Console.WriteLine($"Total daily energy usage: {totalEnergy} kWh");
 
-                Console.WriteLine($"{device.Brand} is consuming {totalEnergy} kwh per day");
+            Console.WriteLine();
 
-            }
+            controller.TurnOffAll();
         }
     }
 }
