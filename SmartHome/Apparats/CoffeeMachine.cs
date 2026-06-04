@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SmartHome
+namespace SmartHome.Apparats
 {
     public class CoffeeMachine : Appliance
     {
-
         public int CupsPerBrew { get; set; }
+
+        public DateTime NextRun { get; set; }
+
+        public void Schedule(DateTime time)
+        {
+            NextRun = time;
+            Console.WriteLine($"{Brand} coffee machine is scheduled to start at {NextRun}");
+        }
 
         public CoffeeMachine (string brand, string room, int cupsPerBrew) : base(brand, room)
         {

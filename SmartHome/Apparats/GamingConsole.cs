@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SmartHome
+namespace SmartHome.Apparats
 {
-    public class Oven : Appliance
+    public class GamingConsole : Appliance
     {
+        public int RunTimeHours { get; set; }
 
-        public int MaxTemperature { get; set; }
-        
-        public Oven (string brand, string room, int maxTemperature) : base (brand, room)
+
+        public GamingConsole(string brand, string room, int runHours) : base(brand, room)
         {
-            MaxTemperature = maxTemperature;
+            RunTimeHours = runHours;
         }
 
         public override string GetInfo()
@@ -22,19 +22,20 @@ namespace SmartHome
         public override void TurnOn()
         {
             IsOn = true;
-            Console.WriteLine($"{Brand} oven is starting to heat up");
+            Console.WriteLine($"{Brand} gaming console is starting up.");
         }
 
         public override void TurnOff()
         {
             IsOn = false;
-            Console.WriteLine($"{Brand} oven is stopping to heat up ");
+            Console.WriteLine($"{Brand} gaming console is shutting down.");
+
         }
 
         public override double GetDailyEnergyUsage()
         {
-            return 2.5;
+            return 4.5;
         }
-
     }
+    
 }

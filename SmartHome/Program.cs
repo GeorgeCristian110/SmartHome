@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.Design;
+﻿using SmartHome.Apparats;
+using System.ComponentModel.Design;
 
 namespace SmartHome
 {
@@ -12,7 +13,7 @@ namespace SmartHome
             controller.AddDevice(new Oven("Electrolux", "Kitchen", 200));
             controller.AddDevice(new RobotVacuum("Xiaomi", "Living room", 100));
             controller.AddDevice(new CoffeeMachine("Bosch", "Kitchen", 8));
-
+            controller.AddDevice(new GamingConsole("Sony", "Bedroom", 5));
             controller.PrintStatusReport();
 
             Console.WriteLine();
