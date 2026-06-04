@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SmartHome.Apparats
 {
-    public class CoffeeMachine : Appliance
+    public class CoffeeMachine : Appliance, ISchedulable
     {
         public int CupsPerBrew { get; set; }
 

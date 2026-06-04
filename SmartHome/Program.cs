@@ -16,6 +16,8 @@ namespace SmartHome
             controller.AddDevice(new GamingConsole("Sony", "Bedroom", 5));
             controller.PrintStatusReport();
 
+            controller.ScheduleAllSchedulableDevices(DateTime.Now.AddHours(2));
+
             Console.WriteLine();
 
             controller.TurnOnAll();

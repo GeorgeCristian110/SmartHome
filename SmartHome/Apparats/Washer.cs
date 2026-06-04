@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SmartHome.Apparats
 {
-    public class Washer : Appliance
+    public class Washer : Appliance, ISchedulable
     {
         public int CapacityKg { get; set; }
 

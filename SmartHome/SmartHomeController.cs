@@ -26,6 +26,22 @@ namespace SmartHome
         // and we are not allowed to use if/switch to check for specific classes.
         //}
 
+        public void ScheduleAllSchedulableDevices(DateTime time)
+        {
+            foreach (Appliance device in _devices)
+            {
+                // 1. Kontrollera om device implementerar ISchedulable. 
+                // 2. Casta device till ISchedulable. 
+                // 3. Anropa Schedule(time). 
+
+                if (device is ISchedulable)
+                {
+                    ISchedulable schedulable = (ISchedulable)device;
+                    schedulable.Schedule(time);
+                }
+            }
+        }
+
         public void TurnOnAll()
         {
             // Loopa igenom alla devices och starta dem. 
