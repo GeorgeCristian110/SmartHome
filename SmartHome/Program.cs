@@ -34,15 +34,6 @@ namespace SmartHome
     }
 }
 
-// 1. Kontrollera vilken typ device är. 
-// 2. Casta till rätt typ. 
-// 3. Anropa rätt energimetod.
-
-// 1. Kontrollera vilken typ device är. 
-// 2. Casta till rätt typ. 
-// 3. Anropa rätt startmetod. 
-// 4. Anropa rätt stoppmetod. 
-
 //1.  Varför behövde du kontrollera vilken typ varje objekt hade? 
 // Eftersom listan som vi har är av typen object så vet C# inte vilka metoder varje objekt har.
 // Så då måste vi kontrollera deras typ och visa att objekten är en Washer och har en metod.
@@ -63,3 +54,35 @@ namespace SmartHome
 // När vi sedan får resulataten so kommer vi få allt förutom den glömda appareten.
 
 // När jag lade till den behövde jag ändra båda metoderna och addera den i listan.
+
+
+//public void ScheduleAllDevicesWrong(DateTime time)
+//{
+//    foreach (Appliance device in _devices)
+//    {
+//        device.Schedule(time);
+//    }
+// This wont work because Schedule is not defined in the Appliance class,
+// and we are not allowed to use if/switch to check for specific classes.
+//}
+
+
+//1.Varför kan vi inte anropa Schedule() direkt på en variabel av typen Appliance? 
+//  Eftersom Schedule() är inte definierad i Appliance klassen så kan vi inte anropa
+//  den direkt på en variabel av typen Appliance.
+
+//2.Varför fungerar det efter att vi castar till ISchedulable? 
+// När vi castar till IScchedulable så vissar vi C# att detta objekt har de metoder som ISchedulable 
+// kräver och då kan man anropa Schedule på den objektet.
+
+//3.  Vad betyder det att RobotVacuum både är en Appliance och en ISchedulable? 
+// Detta betyder att RobotVacuum är en subklass av Appliance och samtidgit kan den implementer
+// interfacet. Då har den både enegnskaper och metoder från Appliance och det som interfacet kräver.
+
+//4.Varför ska inte Schedule() ligga direkt i Appliance? 
+// Vi ska ej tillägga den direkt i Appliance klassen eftersom inte alla aparater kan schemaläggas.
+// Om vi skulle vilja göra det så måste vi göra alla aparater schemaläggbara.
+
+//5.Vad är skillnaden mellan arv och interface i det här exemplet? 
+// Arv använder vi för att dela de gemensama egenskaperna och metoderna mellan de olika apparaterna.
+// Interface implementeras när vi vill att olika klasser ska ha en gemensam metod som andra klasser inte behöver.

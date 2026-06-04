@@ -16,16 +16,6 @@ namespace SmartHome
 
         }
 
-        //public void ScheduleAllDevicesWrong(DateTime time)
-        //{
-        //    foreach (Appliance device in _devices)
-        //    {
-        //        device.Schedule(time);
-        //    }
-        // This wont work because Schedule is not defined in the Appliance class,
-        // and we are not allowed to use if/switch to check for specific classes.
-        //}
-
         public void ScheduleAllSchedulableDevices(DateTime time)
         {
             foreach (Appliance device in _devices)
