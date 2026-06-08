@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SmartHome
+namespace SmartHome.Apparats
 {
     public class SmartLamp : Appliance
     {

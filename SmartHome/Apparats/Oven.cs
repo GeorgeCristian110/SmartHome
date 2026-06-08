@@ -19,7 +19,7 @@ namespace SmartHome.Apparats
             return $"{Brand} oven is in the {Room}";
         }
 
-        public override void TurnOn()
+        public sealed override void TurnOn()
         {
             IsOn = true;
             Console.WriteLine($"{Brand} oven is starting to heat up");
