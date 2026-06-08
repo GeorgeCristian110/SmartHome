@@ -23,7 +23,7 @@ namespace SmartHome.Apparats
 
         public override string GetInfo()
         {
-            return $"{Brand} is in the {Room}";
+            return $"{Brand} robot vacuum is in the {Room}";
         }
 
         public override void TurnOn()

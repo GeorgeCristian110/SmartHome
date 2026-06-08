@@ -14,13 +14,21 @@ namespace SmartHome
             controller.AddDevice(new RobotVacuum("Xiaomi", "Living room", 100));
             controller.AddDevice(new CoffeeMachine("Bosch", "Kitchen", 8));
             controller.AddDevice(new GamingConsole("Sony", "Bedroom", 5));
+            controller.AddDevice(new SmartLamp("IKEA", "Hallway", 80));
             controller.PrintStatusReport();
+            
+            
+            //SmartLamp lamp1 = new SmartLamp("IKEA", "Hallway", 80);
+            //Appliance lamp2 = lamp1;
 
             controller.ScheduleAllSchedulableDevices(DateTime.Now.AddHours(2));
 
             Console.WriteLine();
 
             controller.TurnOnAll();
+
+            //lamp1.TurnOn();
+            //lamp2.TurnOn();
 
             Console.WriteLine();
 
@@ -86,3 +94,8 @@ namespace SmartHome
 //5.Vad är skillnaden mellan arv och interface i det här exemplet? 
 // Arv använder vi för att dela de gemensama egenskaperna och metoderna mellan de olika apparaterna.
 // Interface implementeras när vi vill att olika klasser ska ha en gemensam metod som andra klasser inte behöver.
+
+// Vad händer? Får du en varning? Vad föreslår C# att du ska använda? Svara som kommentar. Ångra sedan 
+//ändringen.
+// Om jag tar bort virtual från basklassen så får jag en varning när jag försöker override metoden i subklassen.
+// Då föreslår C# att jag ska använda mig keyworden new istället och gömma base klassen.

@@ -16,7 +16,7 @@ namespace SmartHome.Apparats
 
         public override string GetInfo()
         {
-            return $"{Brand} is in the {Room}";
+            return $"{Brand} gaming console is in the {Room}";
         }
 
         public override void TurnOn()
