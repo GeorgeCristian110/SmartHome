@@ -15,6 +15,7 @@ namespace SmartHome
             controller.AddDevice(new CoffeeMachine("Bosch", "Kitchen", 8));
             controller.AddDevice(new GamingConsole("Sony", "Bedroom", 5));
             controller.AddDevice(new SmartLamp("IKEA", "Hallway", 80));
+            controller.AddDevice(new AirConditioner("Daikin", "Living room", 24));
             controller.PrintStatusReport();
             
             

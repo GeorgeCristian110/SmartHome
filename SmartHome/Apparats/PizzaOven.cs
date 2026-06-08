@@ -11,10 +11,10 @@ namespace SmartHome.Apparats
         {
         } 
 
-        public override void TurnOn()
-        {
-            Console.WriteLine("Pizza oven starts at extra high temperature.");
-        }
+        //public override void TurnOn()
+        //{
+        //    Console.WriteLine("Pizza oven starts at extra high temperature.");
+        //}
     }
 }
 

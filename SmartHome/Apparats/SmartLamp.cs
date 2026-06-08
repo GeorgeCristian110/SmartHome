@@ -35,7 +35,7 @@ namespace SmartHome.Apparats
 
         public override double GetDailyEnergyUsage()
         {
-            return 0.4;
+            return 0.5;
         }
     }
 }

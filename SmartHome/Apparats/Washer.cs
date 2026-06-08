@@ -10,15 +10,15 @@ namespace SmartHome.Apparats
 
         public DateTime NextRun { get;  set; }
 
+        public Washer(string brand, string room, int capacityKg) : base (brand , room)
+        {
+            CapacityKg = capacityKg;
+        }
+
         public void Schedule(DateTime time)
         {
             NextRun = time;
             Console.WriteLine($"{Brand} washer is scheduled to start washing at {NextRun}");
-        }
-
-        public Washer(string brand, string room, int capacityKg) : base (brand , room)
-        {
-            CapacityKg = capacityKg;
         }
 
         public override string GetInfo()
